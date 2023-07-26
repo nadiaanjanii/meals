@@ -5,12 +5,12 @@ class CategoryGridItem extends StatelessWidget {
   const CategoryGridItem(
       {Key? key,
       required this.category,
-      required this.onSelectCategory,
-      required Null Function() onselectCategory})
+      required this.onSelectCategory,})
       : super(key: key);
 
   final Category category;
-  final VoidCallback onSelectCategory;
+  final void Function() onSelectCategory;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(

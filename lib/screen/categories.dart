@@ -45,10 +45,7 @@ class CategoriesScreen extends StatelessWidget {
             onSelectCategory: () {
               _selectCategory(context, category);
             },
-            onselectCategory: () {
-              _selectCategory(context, category);
-            },
-          )
+          ),
       ],
     );
   }
