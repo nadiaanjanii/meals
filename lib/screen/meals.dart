@@ -6,7 +6,7 @@ import '../models/meal.dart';
 class MealsScreen extends StatelessWidget {
   const MealsScreen(
       {Key? key,
-      required this.title,
+      this.title,
       required this.meals,
       required this.onToggleFavorite})
       : super(key: key);
@@ -31,11 +31,11 @@ class MealsScreen extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
+          const Text(
             "Uh oh... nothing here!",
             style: TextStyle(fontSize: 30, color: Colors.white),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Text(
             "Try selecting a different category",
             style: Theme.of(context).textTheme.bodyText1!.copyWith(
@@ -50,7 +50,7 @@ class MealsScreen extends StatelessWidget {
         itemCount: meals.length,
         itemBuilder: (context, index) => MealItem(
           meal: meals[index],
-          onSelectMeal: (ctx, meal) {
+          onSelectMeal: (meal) {
             selectMeal(context, meal);
           },
         ),

@@ -40,13 +40,14 @@ class _TabsScreenState extends State<TabsScreen> {
     if (isExisting) {
       setState(() {
         _favoriteMeals.remove(meal);
+        _showInfoMessage("Meal is no longer a favorite.");
       });
-      _showInfoMessage("Meal is no longer a favorite.");
+      
     } else {
       setState(() {
         _favoriteMeals.add(meal);
+        _showInfoMessage("Marked as a favorite");
       });
-      _showInfoMessage("Marked as a favorite");
     }
   }
 
@@ -97,7 +98,6 @@ class _TabsScreenState extends State<TabsScreen> {
 
     if (_selectPageIndex == 1) {
       acctivePage = MealsScreen(
-        title: "Favorites",
         meals: _favoriteMeals,
         onToggleFavorite: _toggleMealFaavoriteStatus,
       );

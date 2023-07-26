@@ -8,7 +8,7 @@ class MealItem extends StatelessWidget {
       : super(key: key);
 
   final Meal meal;
-  final void Function(BuildContext context, Meal meal) onSelectMeal;
+  final void Function( Meal meal) onSelectMeal;
 
   String get complexityText {
     return meal.complexity.name[0].toLowerCase() +
@@ -31,7 +31,7 @@ class MealItem extends StatelessWidget {
       elevation: 2,
       child: InkWell(
         onTap: () {
-          onSelectMeal(context, meal);
+          onSelectMeal( meal);
         },
         child: Stack(
           children: [
